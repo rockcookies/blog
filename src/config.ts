@@ -4,8 +4,7 @@ export const SITE: Site = {
   website: 'https://hqy321.com',
   base: '/',
   title: 'Qingying He',
-  description:
-    "Qingying He's Blog - A place to share thoughts, ideas, and experiences.",
+  description: "Qingying He's Blog",
   author: 'Qingying He',
   lang: 'en',
   ogLocale: 'en_US',
