@@ -1,0 +1,31 @@
+---
+title: Projects
+subtitle: Tech Stack & Projects
+description: Tech Stack & Projects
+bgType: rose
+toc: true
+ogImage: true
+---
+
+import BaseLayout from '~/layouts/BaseLayout.astro'
+import StandardLayout from '~/layouts/StandardLayout.astro'
+import GroupView from '~/components/views/GroupView.astro'
+import Link from '~/components/base/Link.astro'
+
+import { withBasePath } from '~/utils/path'
+
+<BaseLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  bgType={frontmatter.bgType}
+  ogImage={frontmatter.ogImage}
+>
+  <StandardLayout
+    class="max-w-300"
+    title={frontmatter.title}
+    subtitle={frontmatter.subtitle}
+    isCentered={true}
+  >
+    <GroupView collectionType="projects" pageToc={frontmatter.toc} />
+  </StandardLayout>
+</BaseLayout>
