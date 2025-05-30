@@ -1,7 +1,9 @@
 {
   "name": "hqy-blog",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
   "scripts": {
     "astro": "astro",
     "sync": "astro sync",
@@ -71,5 +73,24 @@
     "simple-git-hooks": "^2.13.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.33.0"
+  },
+  "packageManager": "pnpm@10.11.0",
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*": [
+      "eslint"
+    ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "simple-git-hooks"
+    ]
+  },
+  "engines": {
+    "node": "^18.18.0 || ^20.9.0 || ^22.0.0"
   }
 }
