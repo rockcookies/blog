@@ -27,13 +27,13 @@ const projects = defineCollection({
   schema: projectSchema,
 });
 
-const changelog = defineCollection({
-  loader: glob({
-    base: "./src/content/changelog",
-    pattern: "**/[^_]*.{md,mdx}",
-  }),
-  schema: postSchema,
-});
+// const changelog = defineCollection({
+//   loader: glob({
+//     base: "./src/content/changelog",
+//     pattern: "**/[^_]*.{md,mdx}",
+//   }),
+//   schema: postSchema,
+// });
 
 const streams = defineCollection({
   loader: file("src/content/streams/data.json"),
@@ -69,7 +69,7 @@ export const collections = {
   home,
   blog,
   projects,
-  changelog,
+  // changelog,
   streams,
   /*
   highlights, */
