@@ -2,10 +2,19 @@
 import Link from '~/components/base/Link.astro'
 import { ensureTrailingSlash } from '~/utils/path'
 
-const pathSegments = ensureTrailingSlash(Astro.url.pathname)
+// 因为 /blog/2024/xxx 这种路径 cd ../ 会被解析成 /blog/2024 然后会导致 404，所以这里要特殊处理下
+
+let pathSegments = ensureTrailingSlash(Astro.url.pathname)
   .split('/')
   .slice(0, -2)
-const href = pathSegments.length > 1 ? pathSegments.join('/') + '/' : '/'
+  .map((ps) => ps.trim())
+  .filter((ps) => ps.length > 0)
+
+if (pathSegments[0] === 'blog') {
+  pathSegments = ['blog']
+}
+
+const href = pathSegments.length > 0 ? `/${pathSegments.join('/')}/` : '/'
 ---
 
 <span class="font-mono op-50">&gt; </span>

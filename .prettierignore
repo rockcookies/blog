@@ -1,5 +1,6 @@
 # exclude formatting
 pnpm-lock.yaml
+*.md
 
 # avoid error due to incorrect processing
 SearchSwitch.astro

@@ -1,6 +1,6 @@
 /* SITE */
-export type Url = `http://${string}` | `https://${string}`;
-type Path = `/${string}`;
+export type Url = `http://${string}` | `https://${string}`
+type Path = `/${string}`
 
 export interface Site {
   /**
@@ -10,7 +10,7 @@ export interface Site {
    * {@link https://docs.astro.build/en/reference/configuration-reference/#site `site`}
    * config in Astro, used for generating canonical URLs, `rss.xml` and other features.
    */
-  website: Url;
+  website: Url
 
   /**
    * Specifies the base path for your site, which must start with `/`.
@@ -22,24 +22,24 @@ export interface Site {
    * @example
    * `/my-site/` (for a site deployed to `https://example.com/my-site/`)
    */
-  base: Path;
+  base: Path
 
   /**
    * Specifies the site name for formatting the `title` in the frontmatter as `<pageTitle> - <siteTitle>`.
    *
    * Used for the title and meta tags, found in `src/components/base/Head.astro`.
    */
-  title: string;
+  title: string
 
   /**
    * Specifies the default content for meta tags, found in `src/components/base/Head.astro`.
    */
-  description: string;
+  description: string
 
   /**
    * Specifies your name for meta tags, found in `src/components/base/Head.astro`.
    */
-  author: string;
+  author: string
 
   /**
    * Specifies the primary language of the document content,
@@ -53,7 +53,7 @@ export interface Site {
    * 'zh-Hant' (Chinese written using the Traditional Chinese script)
    * 'fr' (French)
    */
-  lang: string;
+  lang: string
 
   /**
    * Specifies the page content's language and region for better content display on social platforms,
@@ -66,7 +66,7 @@ export interface Site {
    * 'zh_CN'
    * 'fr_FR'
    */
-  ogLocale: string;
+  ogLocale: string
 
   /**
    * Specifies the allowed domains for optimizing remote images,
@@ -86,12 +86,12 @@ export interface Site {
    * @see https://docs.astro.build/en/reference/configuration-reference/#image-options
    * @see https://astro.build/blog/astro-540/#remote-image-optimization-in-markdown
    */
-  imageDomains: string[];
+  imageDomains: string[]
 }
 
 /* UI */
-export type Icon = `i-${string}-${string}` | `i-${string}:${string}`;
-export type RepoWithOwner = `${string}/${string}`;
+export type Icon = `i-${string}-${string}` | `i-${string}:${string}`
+export type RepoWithOwner = `${string}/${string}`
 
 interface BaseNavItem {
   /**
@@ -100,12 +100,12 @@ interface BaseNavItem {
    * @example
    * '/blog'、'/blog/'
    */
-  path: Path;
+  path: Path
 
   /**
    * Sets the content displayed on hover for accessibility.
    */
-  title: string;
+  title: string
 }
 
 interface TextNavItem extends BaseNavItem {
@@ -123,7 +123,7 @@ interface TextNavItem extends BaseNavItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "alwaysText" | "textHiddenOnMobile";
+  displayMode: 'alwaysText' | 'textHiddenOnMobile'
 
   /**
    * Sets the text displayed for the navigation item.
@@ -131,7 +131,7 @@ interface TextNavItem extends BaseNavItem {
    * Required for `displayMode` values 'alwaysText', 'textHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  text: string;
+  text: string
 }
 
 export interface IconNavItem extends BaseNavItem {
@@ -149,7 +149,7 @@ export interface IconNavItem extends BaseNavItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "alwaysIcon" | "iconHiddenOnMobile";
+  displayMode: 'alwaysIcon' | 'iconHiddenOnMobile'
 
   /**
    * Sets the icon displayed for the navigation item.
@@ -165,7 +165,7 @@ export interface IconNavItem extends BaseNavItem {
    *
    * @see {@link https://icon-sets.iconify.design/ Check all available icons}
    */
-  icon: Icon;
+  icon: Icon
 }
 
 export interface ResponsiveNavItem extends BaseNavItem {
@@ -183,7 +183,7 @@ export interface ResponsiveNavItem extends BaseNavItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "textToIconOnMobile" | "iconToTextOnMobile";
+  displayMode: 'textToIconOnMobile' | 'iconToTextOnMobile'
 
   /**
    * Sets the text displayed for the navigation item.
@@ -191,7 +191,7 @@ export interface ResponsiveNavItem extends BaseNavItem {
    * Required for `displayMode` values 'alwaysText', 'textHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  text: string;
+  text: string
 
   /**
    * Sets the icon displayed for the navigation item.
@@ -207,16 +207,16 @@ export interface ResponsiveNavItem extends BaseNavItem {
    *
    * @see {@link https://icon-sets.iconify.design/ Check all available icons}
    */
-  icon: Icon;
+  icon: Icon
 }
 
-export type InternalNav = TextNavItem | IconNavItem | ResponsiveNavItem;
+export type InternalNav = TextNavItem | IconNavItem | ResponsiveNavItem
 
 interface BaseSocialItem {
   /**
    * Set the URL to the social platform.
    */
-  link: Url;
+  link: Url
 
   /**
    * Sets the content displayed on hover for accessibility.
@@ -226,7 +226,7 @@ interface BaseSocialItem {
    * @example
    * `Follow ${SITE.author} on Twitter`
    */
-  title: string;
+  title: string
 }
 
 interface TextSocialItem extends BaseSocialItem {
@@ -244,7 +244,7 @@ interface TextSocialItem extends BaseSocialItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "alwaysText" | "textHiddenOnMobile";
+  displayMode: 'alwaysText' | 'textHiddenOnMobile'
 
   /**
    * Sets the text displayed for the social item.
@@ -252,7 +252,7 @@ interface TextSocialItem extends BaseSocialItem {
    * Required for `displayMode` values 'alwaysText', 'textHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  text: string;
+  text: string
 }
 
 export interface IconSocialItem extends BaseSocialItem {
@@ -270,7 +270,7 @@ export interface IconSocialItem extends BaseSocialItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "alwaysIcon" | "iconHiddenOnMobile";
+  displayMode: 'alwaysIcon' | 'iconHiddenOnMobile'
 
   /**
    * Sets the icon displayed the social platform.
@@ -286,7 +286,7 @@ export interface IconSocialItem extends BaseSocialItem {
    *
    * @see {@link https://icon-sets.iconify.design/ Check all available icons}
    */
-  icon: Icon;
+  icon: Icon
 }
 
 export interface ResponsiveSocialItem extends BaseSocialItem {
@@ -305,7 +305,7 @@ export interface ResponsiveSocialItem extends BaseSocialItem {
    * The `icon` property is required for 'alwaysIcon', 'iconHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  displayMode: "textToIconOnMobile" | "iconToTextOnMobile";
+  displayMode: 'textToIconOnMobile' | 'iconToTextOnMobile'
 
   /**
    * Sets the text displayed for the social item.
@@ -313,7 +313,7 @@ export interface ResponsiveSocialItem extends BaseSocialItem {
    * Required for `displayMode` values 'alwaysText', 'textHiddenOnMobile', 'iconToTextOnMobile'
    * or 'textToIconOnMobile'.
    */
-  text: string;
+  text: string
 
   /**
    * Sets the icon displayed the social platform.
@@ -329,18 +329,18 @@ export interface ResponsiveSocialItem extends BaseSocialItem {
    *
    * @see {@link https://icon-sets.iconify.design/ Check all available icons}
    */
-  icon: Icon;
+  icon: Icon
 }
 
-export type SocialLink = TextSocialItem | IconSocialItem | ResponsiveSocialItem;
+export type SocialLink = TextSocialItem | IconSocialItem | ResponsiveSocialItem
 
 type NavBarComponentType =
-  | "internalNavs"
-  | "socialLinks"
-  | "searchButton"
-  | "themeButton"
-  | "rssLink"
-  | "hr";
+  | 'internalNavs'
+  | 'socialLinks'
+  | 'searchButton'
+  | 'themeButton'
+  | 'rssLink'
+  | 'hr'
 
 export interface NavBarLayout {
   /**
@@ -352,7 +352,7 @@ export interface NavBarLayout {
    * - The order defines the display sequence.
    * - Use `'hr'` to insert a divider between components.
    */
-  left: NavBarComponentType[];
+  left: NavBarComponentType[]
 
   /**
    * Defines which components ('internalNavs', 'socialLinks', 'searchButton', 'themeButton',
@@ -363,13 +363,13 @@ export interface NavBarLayout {
    * - The order defines the display sequence.
    * - Use `'hr'` to insert a divider between components.
    */
-  right: NavBarComponentType[];
+  right: NavBarComponentType[]
 
   /**
    * Controls whether the 'internalNavs' and 'socialLinks' section are combined into
    * a single navigation menu on mobile, managed through a hamburger icon.
    */
-  mergeOnMobile: boolean;
+  mergeOnMobile: boolean
 }
 
 interface Tab {
@@ -379,15 +379,15 @@ interface Tab {
    * @example
    * '/blog'、'/blog/'
    */
-  path: Path;
+  path: Path
 
   /**
    * Sets the content displayed on hover for accessibility.
    */
-  title: string;
+  title: string
 }
 
-export type Tabs = [Tab, Tab, ...Tab[]];
+export type Tabs = [Tab, Tab, ...Tab[]]
 
 interface GroupView {
   /**
@@ -395,7 +395,7 @@ interface GroupView {
    *
    * Used in `src/components/views/GroupItem.astro`.
    */
-  maxGroupColumns: 2 | 3;
+  maxGroupColumns: 2 | 3
 
   /**
    * Determines whether group item icons display in color when hovered over.
@@ -404,7 +404,7 @@ interface GroupView {
    *
    * Used in `src/components/views/GroupView.astro` and `src/components/base/Categorizer.astro`.
    */
-  showGroupItemColorOnHover: boolean;
+  showGroupItemColorOnHover: boolean
 }
 
 export interface GitHubView {
@@ -413,7 +413,7 @@ export interface GitHubView {
    *
    * For monorepos, the tag name is used as the primary text for `/releases` page.
    */
-  monorepos: RepoWithOwner[];
+  monorepos: RepoWithOwner[]
 
   /**
    * Configures main logos for repositories or packages (for monorepos).
@@ -421,7 +421,7 @@ export interface GitHubView {
    * Matching supports regex or `<owner>/<repo>` format, prioritized by order,
    * and defaults to the owner's avatar if no custom logo is specified.
    */
-  mainLogoOverrides: [RepoWithOwner | RegExp, Url | Icon][];
+  mainLogoOverrides: [RepoWithOwner | RegExp, Url | Icon][]
 
   /**
    * Configures auxiliary logos for repositories or packages (for monorepos).
@@ -429,7 +429,7 @@ export interface GitHubView {
    * Matching supports regex or `<owner>/<repo>` format, prioritized by order,
    * with no logo displayed for unmatched cases.
    */
-  subLogoMatches: [RepoWithOwner | RegExp, Url | Icon][];
+  subLogoMatches: [RepoWithOwner | RegExp, Url | Icon][]
 }
 
 interface ExternalLink {
@@ -437,7 +437,7 @@ interface ExternalLink {
    * Controls whether external links are opened in a new tab.
    * See {@link https://github.com/lin-stephanie/astro-antfustyle-theme/pull/15 #15} for details.
    */
-  newTab: boolean;
+  newTab: boolean
 
   /**
    * Specifies the cursor type for external links when `newTab` is `true`.
@@ -450,13 +450,13 @@ interface ExternalLink {
    * @example
    * 'url("/images/new-tab.svg") 10 10, pointer'
    */
-  cursorType: string;
+  cursorType: string
 
   /**
    * Controls whether to add an indicator to external links when `newTab` is `true`.
    * See {@link https://github.com/lin-stephanie/astro-antfustyle-theme/pull/15 #15} for details.
    */
-  showNewTabIcon: boolean;
+  showNewTabIcon: boolean
 }
 
 export interface Ui {
@@ -465,19 +465,19 @@ export interface Ui {
    *
    * Used in `src/components/nav/NavBar.astro`.
    */
-  internalNavs: InternalNav[];
+  internalNavs: InternalNav[]
 
   /**
    * Sets external social links in display order.
    */
-  socialLinks: SocialLink[];
+  socialLinks: SocialLink[]
 
   /**
    * Controls the layout of the navigation bar.
    *
    * Used in `src/components/nav/NavBar.astro`.
    */
-  navBarLayout: NavBarLayout;
+  navBarLayout: NavBarLayout
 
   /**
    * Enables and configures for tabs within a tabbed layout.
@@ -487,19 +487,19 @@ export interface Ui {
    *
    * Used in `src/layouts/TabbedLayout.astro`.
    */
-  tabbedLayoutTabs: false | Tabs;
+  tabbedLayoutTabs: false | Tabs
 
   /**
    * Configures the `/projects` UIs.
    */
-  groupView: GroupView;
+  groupView: GroupView
 
   /**
    * Configures the `/releases` and `prs` UIs.
    *
    * Used in `src/components/views/GithubView.astro`.
    */
-  githubView: GitHubView;
+  githubView: GitHubView
 
   /**
    * Configures external links' behavior and appearance.
@@ -507,7 +507,7 @@ export interface Ui {
    * Used in `plugins/index.ts`, `src/components/base/Link.astro`
    * and `src/layouts/BaseLayout.astro`.
    */
-  externalLink: ExternalLink;
+  externalLink: ExternalLink
 
   /**
    * Controls the display style of post metadata (creation date, read time, modified date):
@@ -518,34 +518,34 @@ export interface Ui {
    *
    * Used in `src/components/base/PostMeta.astro`.
    */
-  postMetaStyle: "minimal" | "icon";
+  postMetaStyle: 'minimal' | 'icon'
 }
 
 /* FEATURES */
-export type BgType = "plum" | "rose";
-export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
-type Mentioned = `@${string}` | `@${string}@${string}` | "";
-type FeatureConfig<T> = false | [boolean, T];
+export type BgType = 'plum' | 'dot' | 'rose' | 'particle'
+export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6
+type Mentioned = `@${string}` | `@${string}@${string}` | ''
+type FeatureConfig<T> = false | [boolean, T]
 
 interface slideEnterAnimConfig {
   /**
    * Adjusts the animation speed (ms). Smaller values speed up; larger values slow down.
    */
-  enterStep: number;
+  enterStep: number
 }
 
 interface OgImageConfig {
   /**
    * Sets your name or brand name that will be displayed on the OG image.
    */
-  authorOrBrand: string;
+  authorOrBrand: string
 
   /**
    * Sets the fallback title for OG images.
    *
    * Used when the `title` in the frontmatter is missing or invalid.
    */
-  fallbackTitle: string;
+  fallbackTitle: string
 
   /**
    * Sets the fallback background for OG images.
@@ -557,7 +557,7 @@ interface OgImageConfig {
    * A fallback OG image is the default image used when the specified or auto-generated OG image is missing.
    * You can delete the existing file to regenerate a new one.
    */
-  fallbackBgType: BgType;
+  fallbackBgType: BgType
 }
 
 export interface TocConfig {
@@ -566,19 +566,19 @@ export interface TocConfig {
    *
    * Must be a valid heading level (h1-h6) and not greater than {@link maxHeadingLevel}.
    */
-  minHeadingLevel: HeadingLevel;
+  minHeadingLevel: HeadingLevel
 
   /**
    * Sets the maximum heading level for TOC.
    *
    * Must be a valid heading level (h1-h6) and not lower than {@link minHeadingLevel}.
    */
-  maxHeadingLevel: HeadingLevel;
+  maxHeadingLevel: HeadingLevel
 
   /**
    * Sets the position of TOC on the page (either on the left or right).
    */
-  displayPosition: "left" | "right";
+  displayPosition: 'left' | 'right'
 
   /**
    * Controls how the page TOC is displayed. Allowed values:
@@ -586,7 +586,7 @@ export interface TocConfig {
    * - 'content': TOC shows when hovering over the content area (element with class 'prose').
    * - 'hover': TOC shows only when hovering over the TOC itself.
    */
-  displayMode: "always" | "content" | "hover";
+  displayMode: 'always' | 'content' | 'hover'
 }
 
 export interface ShareConfig {
@@ -597,7 +597,7 @@ export interface ShareConfig {
    *
    * If an empty string is used, '@userName' will not appear in the pre-filled sharing text.
    */
-  twitter: FeatureConfig<Mentioned>;
+  twitter: FeatureConfig<Mentioned>
 
   /**
    * Configures Bluesky sharing:
@@ -606,7 +606,7 @@ export interface ShareConfig {
    *
    * If an empty string is used, '@handle' will not appear in the pre-filled sharing text.
    */
-  bluesky: FeatureConfig<Mentioned>;
+  bluesky: FeatureConfig<Mentioned>
 
   /**
    * Configures Mastodon sharing:
@@ -615,37 +615,37 @@ export interface ShareConfig {
    *
    * If an empty string is used, '@userName@serverName' will not appear in the pre-filled sharing text.
    */
-  mastodon: FeatureConfig<Mentioned>;
+  mastodon: FeatureConfig<Mentioned>
 
   /**
    * Controls whether to include Facebook for sharing.
    */
-  facebook: boolean;
+  facebook: boolean
 
   /**
    * Controls whether to include Pinterest for sharing.
    */
-  pinterest: boolean;
+  pinterest: boolean
 
   /**
    * Controls whether to include Reddit for sharing.
    */
-  reddit: boolean;
+  reddit: boolean
 
   /**
    * Controls whether to include Telegram for sharing.
    */
-  telegram: boolean;
+  telegram: boolean
 
   /**
    * Controls whether to include WhatsApp for sharing.
    */
-  whatsapp: boolean;
+  whatsapp: boolean
 
   /**
    * Controls whether to include Email for sharing.
    */
-  email: boolean;
+  email: boolean
 }
 
 export interface giscusConfig {
@@ -654,67 +654,67 @@ export interface giscusConfig {
    *
    * @example 'lin-stephanie/astro-antfustyle-theme'
    */
-  "data-repo": RepoWithOwner;
+  'data-repo': RepoWithOwner
 
   /**
    * Unique ID of the GitHub repository.
    *
    * @example "R_kgDOLylKbA"
    */
-  "data-repo-id": string;
+  'data-repo-id': string
 
   /**
    * Discussion category name.
    *
    * @example "Giscus"
    */
-  "data-category": string;
+  'data-category': string
 
   /**
    * Unique ID of the discussion category.
    *
    * @example "DIC_kwDOLylKbM4Cpugn"
    */
-  "data-category-id": string;
+  'data-category-id': string
 
   /**
    * Mapping between pages and discussions.
    *
    * @example 'title'
    */
-  "data-mapping": string;
+  'data-mapping': string
 
   /**
    * Enable strict mapping (1 = true, 0 = false).
    */
-  "data-strict": "0" | "1";
+  'data-strict': '0' | '1'
 
   /**
    * Enable reactions (1 = true, 0 = false).
    */
-  "data-reactions-enabled": "0" | "1";
+  'data-reactions-enabled': '0' | '1'
 
   /**
    * Emit discussion metadata (1 = true, 0 = false).
    */
-  "data-emit-metadata": "0" | "1";
+  'data-emit-metadata': '0' | '1'
 
   /**
    * Position of the comment input box.
    */
-  "data-input-position": "top" | "bottom";
+  'data-input-position': 'top' | 'bottom'
 
   /**
    * Language for the Giscus widget UI.
    */
-  "data-lang": string;
+  'data-lang': string
 }
 
 export interface Features {
   /**
    * Controls whether to enable slide enter animation on each page.
    */
-  slideEnterAnim: FeatureConfig<slideEnterAnimConfig>;
+  slideEnterAnim: FeatureConfig<slideEnterAnimConfig>
 
   /**
    * Globally controls global OG image auto-generation and related options.
@@ -726,14 +726,14 @@ export interface Features {
    * - Generated images are saved in `/public/og-images`.
    * - If disabled, deleting `/public/og-images/og-image.png` won't regenerate it.
    */
-  ogImage: FeatureConfig<OgImageConfig>;
+  ogImage: FeatureConfig<OgImageConfig>
 
   /**
    * Globally controls the TOC feature and related options.
    *
    * To disable for a specific post or page, set the `toc` field in the frontmatter to `false`.
    */
-  toc: FeatureConfig<TocConfig>;
+  toc: FeatureConfig<TocConfig>
 
   /**
    * Globally controls the sharing feature, displaying social sharing links
@@ -741,7 +741,7 @@ export interface Features {
    *
    * To disable for a specific post, set the `share` field in the frontmatter to `false`.
    */
-  share: FeatureConfig<ShareConfig>;
+  share: FeatureConfig<ShareConfig>
 
   /**
    * Enables and configures the Giscus comment feature globally.
@@ -749,5 +749,5 @@ export interface Features {
    *
    * To disable for a specific post, set the `giscus` field in the frontmatter to `false`.
    */
-  giscus: FeatureConfig<giscusConfig>;
+  giscus: FeatureConfig<giscusConfig>
 }

@@ -2,7 +2,7 @@
 
 Software Engineer
 
-- **Languages**: Go, Java, Python, C++, JavaScript, TypeScript
+- **Languages**: Go, Java, Python, JavaScript, TypeScript, Rust
 - **Topics**: Rich Web Applications, Full-Stack Development, Microservices, DevOps
 - **Tools and Framework**: Spring Boot, React, Vue, NestJS
 

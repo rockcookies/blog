@@ -1,31 +1,31 @@
-import { glob, file } from "astro/loaders";
-import { defineCollection } from "astro:content";
+import { glob, file } from 'astro/loaders'
+import { defineCollection } from 'astro:content'
 
 import {
   pageSchema,
   postSchema,
   projectSchema,
   streamSchema,
-} from "~/content/schema";
+} from '~/content/schema'
 
 const pages = defineCollection({
-  loader: glob({ base: "./src/pages", pattern: "**/*.mdx" }),
+  loader: glob({ base: './src/pages', pattern: '**/*.mdx' }),
   schema: pageSchema,
-});
+})
 
 const home = defineCollection({
-  loader: glob({ base: "./src/content/home", pattern: "index.{md,mdx}" }),
-});
+  loader: glob({ base: './src/content/home', pattern: 'index.{md,mdx}' }),
+})
 
 const blog = defineCollection({
-  loader: glob({ base: "./src/content/blog", pattern: "**/[^_]*.{md,mdx}" }),
+  loader: glob({ base: './src/content/blog', pattern: '**/[^_]*.{md,mdx}' }),
   schema: postSchema,
-});
+})
 
 const projects = defineCollection({
-  loader: file("src/content/projects/data.json"),
+  loader: file('src/content/projects/data.json'),
   schema: projectSchema,
-});
+})
 
 // const changelog = defineCollection({
 //   loader: glob({
@@ -36,9 +36,9 @@ const projects = defineCollection({
 // });
 
 const streams = defineCollection({
-  loader: file("src/content/streams/data.json"),
+  loader: file('src/content/streams/data.json'),
   schema: streamSchema,
-});
+})
 
 /*
 const highlights = defineCollection({
@@ -73,4 +73,4 @@ export const collections = {
   streams,
   /*
   highlights, */
-};
+}
